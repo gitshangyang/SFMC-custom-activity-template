@@ -24,6 +24,9 @@
             "inArguments": [
               { 
                 "contactIdentifier": "{{Contact.key}}"
+              },
+              { 
+                "sms": ""
               }
             ],
             "outArguments": [],

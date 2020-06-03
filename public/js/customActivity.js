@@ -46,10 +46,14 @@ define(['postmonger'], function (Postmonger) {
      * The config.json will be updated here if there are any updates to be done via Front End UI
      */
     function save() {
+        var value = $('select1').find('option:selected').html();
         payload['arguments'].execute.inArguments = [
             {
-                contactIdentifier: "{{contact.key}}"
-            }
+                "contactIdentifier": "{{contact.key}}"
+            },
+            { 
+                "sms": value
+              }
         ];
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
