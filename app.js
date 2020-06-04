@@ -19,12 +19,14 @@ app.use(bodyParser.raw({type: 'application/jwt'}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 app.use(cookieParser());
 app.use(session({
     secret: "fd34s@!@dfa453f3DF#$D&W",
     resave: false,
     saveUninitialized: true,
+    cookie: { secure: !true }
 }));
 
 // Express in Development Mode
