@@ -27,5 +27,8 @@ exports.login = function(req, res) {
 };
 
 exports.logout = function(req, res) {
+
+	console.log("session.token : " + req.session.token);
+
 	req.session.token = "";
 };
